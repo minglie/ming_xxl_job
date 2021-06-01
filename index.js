@@ -1,11 +1,11 @@
 var M=require("ming_node");
 
 const ming_xxl_job={};
-const xxl_job_host="http://localhost:8080/"
+ming_xxl_job.xxl_job_host="http://localhost:8080/"
 
 
 ming_xxl_job.stopJobInfoById=async function (id){
-    r= await M.post(xxl_job_host+"/jobinfo/stop",{id:id},{
+    r= await M.post(ming_xxl_job.xxl_job_host+"/jobinfo/stop",{id:id},{
         "Content-Type":"application/x-www-form-urlencoded; ",
         "XXL-JOB-ACCESS-TOKEN":""
     })
@@ -14,8 +14,7 @@ ming_xxl_job.stopJobInfoById=async function (id){
 
 
 ming_xxl_job.startJobInfoById=async function (id){
-    //鍋滄浠诲姟
-    r= await M.post(xxl_job_host+"/jobinfo/start",{id:id},{
+    r= await M.post(ming_xxl_job.xxl_job_host+"/jobinfo/start",{id:id},{
         "Content-Type":"application/x-www-form-urlencoded; ",
         "XXL-JOB-ACCESS-TOKEN":""
     })
@@ -24,8 +23,7 @@ ming_xxl_job.startJobInfoById=async function (id){
 
 
 ming_xxl_job.triggerJobInfoById=async function (id,executorParam){
-    //瑙﹀彂鎵ц涓€娆�
-    r= await M.post(xxl_job_host+"/jobinfo/trigger",{id:id,executorParam:executorParam},{
+    r= await M.post(ming_xxl_job.xxl_job_host+"/jobinfo/trigger",{id:id,executorParam:executorParam},{
         "Content-Type":"application/x-www-form-urlencoded; ",
         "XXL-JOB-ACCESS-TOKEN":""
     })
@@ -46,7 +44,7 @@ ming_xxl_job.setJobAttribute=async function (id,key,value){
 }
 
 ming_xxl_job.updateJobInfo=async function (id,jobInfo){
-    r= await M.post(xxl_job_host+"/jobinfo/update",{
+    r= await M.post(ming_xxl_job.xxl_job_host+"/jobinfo/update",{
         "jobDesc": jobInfo.jobDesc||"寤舵椂瑙﹀彂鎵ц鍣ㄦ墽琛�",
         "author": jobInfo.author||"XXL",
         "jobGroup": jobInfo.jobGroup||1,
@@ -69,8 +67,8 @@ ming_xxl_job.updateJobInfo=async function (id,jobInfo){
 
 
 ming_xxl_job.doSql=async function (sql){
-    //瑙﹀彂鎵ц涓€娆�
-    r= await M.post(xxl_job_host+"/doSql",{sql:sql},{
+
+    r= await M.post(ming_xxl_job.xxl_job_host+"/doSql",{sql:sql},{
         "Content-Type":"application/x-www-form-urlencoded; ",
         "XXL-JOB-ACCESS-TOKEN":""
     })
