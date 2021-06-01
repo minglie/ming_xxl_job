@@ -1,0 +1,23 @@
+{
+  "name": "ming_xxl_job",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minglie/ming_xxl_job.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minglie/ming_xxl_job/issues"
+  },
+  "homepage": "https://github.com/minglie/ming_xxl_job#readme",
+  "dependencies": {
+    "ming_node": "^1.9.11"
+  }
+}
